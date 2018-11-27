@@ -1,4 +1,4 @@
-package com.ocr.anthony;
+package com.ocr.julien;
 
 import java.util.Scanner;
 

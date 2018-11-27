@@ -1,4 +1,4 @@
-package com.ocr.anthony;
+package com.ocr.julien;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +10,7 @@ import java.util.Scanner;
 import static java.nio.file.StandardOpenOption.APPEND;
 
 public class Order {
+
     Scanner sc = new Scanner(System.in);
     String orderSummary = "";
 
@@ -23,8 +24,10 @@ public class Order {
         System.out.println("3 - végétarien");
         System.out.println("Que souhaitez-vous comme menu ?");
     }
+
     /**
      * Display a selected menu.
+     *
      * @param nbMenu The selected menu.
      */
     public void displaySelectedMenu(int nbMenu) {
@@ -101,11 +104,11 @@ public class Order {
     }
 
     /**
-     * Display a selected side depending on all sides enable or not.
-     * All sides = vegetables, frites and rice
-     * No all sides = rice or not
+     * Display a selected side depending on all sides enable or not. All sides =
+     * vegetables, frites and rice No all sides = rice or not
+     *
      * @param nbSide The selected Side
-     * @param allSidesEnable  enable display for all side or not
+     * @param allSidesEnable enable display for all side or not
      */
     public void displaySelectedSide(int nbSide, boolean allSidesEnable) {
         if (allSidesEnable) {
@@ -137,8 +140,10 @@ public class Order {
             }
         }
     }
+
     /**
      * Display a selected drink.
+     *
      * @param nbDrink The selected drink.
      */
     public void displaySelectedDrink(int nbDrink) {
@@ -157,10 +162,11 @@ public class Order {
                 break;
         }
     }
+
     /**
-     * Display all available sides depending on all sides enable or not.
-     * All sides = vegetables, frites and rice
-     * No all sides = rice or not
+     * Display all available sides depending on all sides enable or not. All
+     * sides = vegetables, frites and rice No all sides = rice or not
+     *
      * @param allSideEnable enable display for all side or not
      */
     public void displayAvailableSide(boolean allSideEnable) {
@@ -188,15 +194,18 @@ public class Order {
     }
 
     /**
-     * Display a question about a category in the standard input, get response and display it
+     * Display a question about a category in the standard input, get response
+     * and display it
+     *
      * @param category the category of the question
      * @param responses available responses
      * @return the number of the selected choice
      */
     public int askSomething(String category, String[] responses) {
         System.out.println("Choix " + category);
-        for (int i = 1; i <= responses.length; i++)
+        for (int i = 1; i <= responses.length; i++) {
             System.out.println(i + " - " + responses[i - 1]);
+        }
         System.out.println("Que souhaitez-vous comme " + category + "?");
         int nbResponse = 0;
         boolean responseIsGood;
@@ -214,17 +223,20 @@ public class Order {
                 System.out.println(choice);
             } else {
                 boolean isVowel = "aeiouy".contains(Character.toString(category.charAt(0)));
-                if (isVowel)
+                if (isVowel) {
                     System.out.println("Vous n'avez pas choisi d'" + category + " parmi les choix proposés");
-                else
+                } else {
                     System.out.println("Vous n'avez pas choisi de " + category + " parmi les choix proposés");
+                }
             }
         } while (!responseIsGood);
         return nbResponse;
     }
 
     /**
-     * Display a question about menu in the standard input, get response and display it
+     * Display a question about menu in the standard input, get response and
+     * display it
+     *
      * @return the number of the selected menu
      */
     public int askMenu() {
@@ -233,7 +245,9 @@ public class Order {
     }
 
     /**
-     * Display a question about side in the standard input, get response and display it
+     * Display a question about side in the standard input, get response and
+     * display it
+     *
      * @param allSidesEnable
      * @return chosen value
      */
@@ -248,7 +262,9 @@ public class Order {
     }
 
     /**
-     * Display a question about drink in the standard input, get response and display it
+     * Display a question about drink in the standard input, get response and
+     * display it
+     *
      * @return chosen value
      */
     public int askDrink() {
